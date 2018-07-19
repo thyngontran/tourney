@@ -1,0 +1,130 @@
+<!doctype html>
+<html ng-app="tourneyApp">
+  <title>Cyburi VB Assistant</title>
+  <head>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.10/angular.min.js"></script>
+          
+    <script src="tourney.js"></script>
+    <link rel="stylesheet" href="tourney.css">
+      <base href="/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+  </head>
+  <body>
+    <h2>Game/Tourney Assistant</h2>
+         
+    <div ng-controller="TourneyListController as tourneyList" class="md-padding"  id="popupContainer" ng-cloak>
+      <span>{{tourneyList.remaining()}} of {{tourneyList.names.length}} players checked in.</span>
+      [ <a href="" ng-click="tourneyList.archive()">save/publish</a> ] {{tourneyList.saveStatusText}}
+      <table>
+        <tr><th><input type="checkbox" ng-model="tourneyList.selectAllFlag" ng-click="tourneyList.selectAll()" /></th>
+            <th>Player Name</th><th>Pool</th><th>Team</th><th>Net</th><th>GP</th><th>GW</th><th>GL</th><th>Points</th></tr>  
+        <tr ng-repeat="player in tourneyList.names | orderBy:['text','group']">
+            <td align=center><input type="checkbox" ng-model="player.checkin"></td>
+            <td><span class="checkin-{{player.checkin}}">{{player.text}}</td>
+            <td>
+                <select ng-model="player.group">
+                    <option value="Gold">Gold</option>
+                    <option value="Silver">Silver</option>
+                    <option value="New">New</option>
+                </select>
+            </td>
+                
+            <td align=center>{{player.team}}</td>
+            <td align=center>{{player.net}}</td>
+            <td align=center>{{player.gamePlayed}}</td>
+            <td align=center>{{player.gameWon}}</td>
+            <td align=center>{{player.gameLost}}</td>
+            <td align=center>{{player.totalPoints}}</td>
+        </tr>
+          
+      </table>
+      <form ng-submit="tourneyList.addPlayer()">
+        <input type="text" ng-model="tourneyList.newNameText" size="20"
+               placeholder="add new player here">
+        <select ng-model="tourneyList.newPoolText">
+            <option value="Gold">Gold</option>
+            <option value="Silver">Silver</option>
+            <option selected value="New" >New</option>
+        </select>
+            
+        <input class="btn-primary" type="submit" value="add">
+      </form>
+    <br>
+    <form ng-submit="tourneyList.resetTourney()">
+        <input class="btn-primary" type="submit" value="RESET TOURNEY/GAMES">
+    </form>
+    <br>
+    <form ng-submit="tourneyList.recordGame($event)">
+        <input type="text" ng-model="tourneyList.trackTeamWon" size="5"
+               placeholder="t#won"> 
+        vs
+        <input type="text" ng-model="tourneyList.trackTeamLost" size="5"
+               placeholder="t#lost"> 
+        <input type="text" ng-model="tourneyList.trackPointDif" size="5"
+               placeholder="dif">
+        <input class="btn-primary" type="submit" value="Record">
+    </form>
+    <br>
+
+      <form ng-submit="tourneyList.letsGo()">
+        <!--Avail Net
+        <input type="text" ng-model="tourneyList.totalNet"  size="5"
+               placeholder="# net(s) availalble" value = "2">
+        -->
+        Gold TeamSize
+        <select ng-model="tourneyList.pool1TeamSize">
+            <option selected value="2">2vs2</option>
+            <option value="3">3vs3</option>
+            <option value="4" >4vs4</option>
+        </select>
+        Silver TeamSize
+        <select ng-model="tourneyList.pool2TeamSize">
+            <option value="2">2vs2</option>
+            <option selected value="3">3vs3</option>
+            <option value="4" >4vs4</option>
+        </select>
+          
+          <br>
+          <br>
+          <input class="btn-primary" type="submit" value="Let's Go!!!">
+          <p class=status>{{tourneyList.statusText}}</p>
+        </form>
+    <hr>
+
+    <table>
+        {{tourneyList.generatedPool1.length}} player(s) in Gold Pool
+        <tr><th>Team</th><th>Player Name</th><th>Net</th></tr>  
+        <tr ng-repeat="player in tourneyList.generatedPool1 | orderBy:['team','text']">
+            <td>{{player.team}}</td>
+            <td><span class="checkin-{{player.checkin}}">{{player.text}}</td>
+            <td>{{player.net}}</td>
+        </tr>
+          
+      </table>
+        <br>
+        <table>
+        {{tourneyList.generatedPool2.length}} player(s) in Silver Pool
+        <tr><th>Team</th><th>Player Name</th><th>Net</th></tr>  
+        <tr ng-repeat="player in tourneyList.generatedPool2 | orderBy:['team','text']">
+            <td>{{player.team}}</td>
+            <td><span class="checkin-{{player.checkin}}">{{player.text}}</td>
+            <td>{{player.net}}</td>
+        </tr>
+          
+      </table>
+        <br>
+    <table>
+        {{tourneyList.generatedPool3.length}} player(s) in New Pool
+        <tr><th>Team</th><th>Player Name</th><th>Net</th></tr>  
+        <tr ng-repeat="player in tourneyList.generatedPool3 | orderBy:['team','text']">
+            <td>{{player.team}}</td>
+            <td><span class="checkin-{{player.checkin}}">{{player.text}}</td>
+            <td>{{player.net}}</td>
+        </tr>
+          
+      </table>
+            
+    </div>
+        
+    </body>
+</html>

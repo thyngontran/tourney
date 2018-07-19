@@ -1,0 +1,66 @@
+<!doctype html>
+<html ng-app="tourneyApp">
+  <title>Cyburi Summer 2018 Linear Ranking</title>
+  <head>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.10/angular.min.js"></script>
+    <script src="tourney.js"></script>
+    <link rel="stylesheet" href="tourney.css">
+      <base href="/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+  </head>
+  <body>
+    <h1>Cyburi Summer 2018 Linear Ranking</h2>
+        
+    <div ng-controller="TourneyListController as tourneyList">
+     Have games teach the games.  The best way to learn volleyball skills is playing 2vs2 or 3vs3.  Randomized matches are computerized generated each time.  Rank is based on #game played, #game won, total points by using a method of the mathematician Bjerring; and more detailed whitepaper can be found <a href="/resource/LinearRankingTournament.pdf">here</a>.<br>
+     <small><b><i>**GP-Game Played, GW-Game Won, GL-Game Lost, Points-Total Points</i></b></small>
+   
+      <h2> GROUP1 POOL</h1>
+      <table>
+        <tr><th>Rank</th><th>Player Name</th><th>GP</th><th>GW</th><th>GL</th><th>Points</th></tr>  
+        <tr ng-repeat="player in tourneyList.names | orderBy:['-gamePlayed','-gameWon','-totalPoints'] |filter:'Gold':true">
+            <td align=center>{{$index +1}}</td>
+            <td>{{player.text}}</td>
+            <td align=center>{{player.gamePlayed}}</td>
+            <td align=center>{{player.gameWon}}</td>
+            <td align=center>{{player.gameLost}}</td>
+            <td align=center>{{player.totalPoints}}</td>
+        </tr>
+          
+      </table>
+      
+
+       <h2> GROUP2 POOL</h1>
+      <table>
+        <tr><th>Rank</th><th>Player Name</th><th>GP</th><th>GW</th><th>GL</th><th>Points</th></tr>  
+        <tr ng-repeat="player in tourneyList.names | orderBy:['-gamePlayed','-gameWon','-totalPoints'] |filter:'Silver':true">
+            <td align=center>{{$index +1}}</td>
+            <td>{{player.text}}</td>
+            <td align=center>{{player.gamePlayed}}</td>
+            <td align=center>{{player.gameWon}}</td>
+            <td align=center>{{player.gameLost}}</td>
+            <td align=center>{{player.totalPoints}}</td>
+        </tr>
+          
+      </table>
+
+       <h2> UNASSIGNED GROUP POOL</h1>
+      <table>
+        <tr><th>Rank</th><th>Player Name</th><th>GP</th><th>GW</th><th>GL</th><th>Points</th></tr>  
+        <tr ng-repeat="player in tourneyList.names | orderBy:['-gamePlayed','-gameWon','-totalPoints'] |filter:'New':true">
+            <td align=center>{{$index +1}}</td>
+            <td>{{player.text}}</td>
+            <td align=center>{{player.gamePlayed}}</td>
+            <td align=center>{{player.gameWon}}</td>
+            <td align=center>{{player.gameLost}}</td>
+            <td align=center>{{player.totalPoints}}</td>
+        </tr>          
+      </table>
+      
+      
+      </div>
+      
+    <br>  
+    <small>contact vbc@cyburi.com for any recording error(s).</small>
+    </body>
+</html>

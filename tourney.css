@@ -1,0 +1,24 @@
+.checkin-false {
+  text-decoration: line-through;
+  color: grey;
+}
+
+p.status {
+  color: red;
+}
+
+<style>
+table, th, td {
+    height="150%"
+    border: 1px solid grey;
+    border-collapse: collapse;
+    padding: 5px;
+}
+
+table tr:nth-child(odd){
+    background-color: azure;
+}
+
+table tr:nth-child(even){
+    background-color: aqua;
+}

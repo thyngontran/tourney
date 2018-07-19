@@ -1,0 +1,78 @@
+{
+    "players": [
+         {
+            "PlayerId": "1528932041192",
+            "text": "Isabella Tran",
+            "group": "Gold",
+            "team": "",
+            "net": "",
+            "checkin": ""
+        },	 {
+            "PlayerId": "1528930611651",
+            "text": "Isabella Tran",
+            "group": "Gold",
+            "team": "",
+            "net": "",
+            "checkin": ""
+        },	 {
+            "PlayerId": "01-18-2016",
+            "text": "Thank You",
+            "group": "Gold",
+            "team": "1",
+            "net": "0",
+            "checkin": "true"
+        },	 {
+            "PlayerId": "1528932105191",
+            "text": "Isabella Tran",
+            "group": "Gold",
+            "team": "",
+            "net": "",
+            "checkin": ""
+        },	 {
+            "PlayerId": "1528935190778",
+            "text": "Isabella Tran",
+            "group": "Gold",
+            "team": "",
+            "net": "",
+            "checkin": ""
+        }	    ]
+}
+    playerList.names = [
+      {playerId:'1', text:'Isabella Tran', checkin:false, group:"Gold", team:0, net:0},
+      {playerId:'2', text:'Kaitlin Tran', checkin:false, group:"Gold", team:0, net:0},
+      {playerId:'3', text:'Quoc Tran', checkin:false, group:"Silver", team:0, net:0},
+      {playerId:'4', text:'Jolene Do', checkin:false, group:"Silver", team:0, net:0}, 
+      {playerId:'5', text:'Diana McCaskill', checkin:false, group:"Gold", team:0, net:0},
+      {playerId:'6', text:'Ehlaina Mc', checkin:false, group:"Silver", team:0, net:0}, 
+      {playerId:'7', text:'Quenson Tam', checkin:false, group:"Gold", team:0, net:0}, 
+      {playerId:'8', text:'Kyla', checkin:false, group:"Silver", team:0, net:0}, 
+      {playerId:'9', text:'Gabriella Pham', checkin:false, group:"Silver", team:0, net:0}, 
+      {playerId:'10', text:'Kherlen Tamir', checkin:false, group:"Silver", team:0, net:0}, 
+      {playerId:'11', text:'Skyla Tran', checkin:false, group:"Gold", team:0, net:0}, 
+      {playerId:'12', text:'Sidney Le', checkin:false, group:"Silver", team:0, net:0}, 
+      {playerId:'13', text:'Leyton Wood', checkin:false, group:"New", team:0, net:0}, 
+      {playerId:'14', text:'Stefania Nguyen', checkin:false, group:"New", team:0, net:0}, 
+      {playerId:'15', text:'Anu Uuganbat', checkin:false, group:"New", team:0, net:0}, 
+      {playerId:'16', text:'Diana Gamboa-Hazou', checkin:false, group:"Gold", team:0, net:0}, 
+      {playerId:'17', text:'Lisa Egshiglen', checkin:false, group:"Gold", team:0, net:0}, 
+      {playerId:'18', text:'Angie Egshiglen', checkin:false, group:"Gold", team:0, net:0}, 
+      {playerId:'19', text:'QC Phan', checkin:false, group:"Silver", team:0, net:0}, 
+      {playerId:'20', text:'Mandy Le', checkin:false, group:"Gold", team:0, net:0}, 
+      {playerId:'21', text:'Elizabeth', checkin:false, group:"Silver", team:0, net:0}, 
+      {playerId:'22', text:'Valerie', checkin:false, group:"New", team:0, net:0}, 
+      {playerId:'23', text:'Richard', checkin:false, group:"New", team:0, net:0}, 
+    ];
+
+
+{
+            "PlayerId": "1",
+            "text": "Isabella Tran",
+            "group": "Gold",
+            "team": "0",
+            "net": "0",
+            "totalPoints": "0",
+            "gamePlayed": "0",
+            "gameWon": "0",
+            "gameLost": "0",
+            "checkin": "true"
+}
